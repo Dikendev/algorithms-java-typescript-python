@@ -6,6 +6,7 @@ function binary_search(array: number[], search: number): any {
   while (low <= high) {
     let middle: number = Math.round((low + high) / 2);
     let count: number = 0;
+    
     if (array[middle] < search) {
       low = middle + 1
       count++;
