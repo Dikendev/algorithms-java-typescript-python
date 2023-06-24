@@ -38,7 +38,7 @@ Thumbs.db
 dist/**/*
 
 # ignore need js files
-.js
+*.js
 
 # ignore yarn.lock
 yarn.lock
