@@ -31,7 +31,7 @@ function sortColors (nums: number[]): void {
 	let high: number = nums.length - 1;
 
 	while (mid <= high) {
-		switch (nums[mid]) {
+	switch (nums[mid]) {
 			case 0:
 				swap(mid, low);
 				mid++;
