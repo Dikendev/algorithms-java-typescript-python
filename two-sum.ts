@@ -15,7 +15,7 @@ const twoSum = (array: number[], goal: number) => {
       return [array.indexOf(complement), array.indexOf(array[i])];
     }
   }
-ß
+
   return [];
 }
 
