@@ -3,6 +3,9 @@
  * @param array - array of numbers;
  * @param targetNumber - number
  * @returns number
+ * 
+ *  Big O notations
+ * O(log n)
 */
 
 function binary_search(array: number[], targetNumber: number): number {
