@@ -4,11 +4,11 @@
 * @param goal - number
 * @returns
 */
-const twoSum = (array: number[], goal: number) => {
+const twoSum = (array: number[], goal: number): any => {
   let memo = {};
-  let complement;
+  let complement: number;
   for (let i = 0; i < array.length; i++) {
-    complement = goal -array[i];
+    complement = goal - array[i];
     memo[array[i]] = complement;
 
     if(memo[complement]) {
