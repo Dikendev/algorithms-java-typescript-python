@@ -4,7 +4,7 @@
  * @param targetNumber - number
  * @returns number
  * 
- *  Big O notations
+ * Big O notation
  * O(log n)
 */
 
