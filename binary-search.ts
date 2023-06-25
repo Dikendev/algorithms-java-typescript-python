@@ -49,7 +49,7 @@ const searchNumber: number = 256;
 const numberArray: number[] = [];
 
 for (let i = 1; i <= 256; i++) {
-  numberArray.push(i);
+	numberArray.push(i);
 }
 
 let index2: number = binary_search(numberArray, searchNumber);
