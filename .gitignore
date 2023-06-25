@@ -40,5 +40,10 @@ dist/**/*
 # ignore need js files
 *.js
 
+# ignore package files
+package-lock.json
+package.json
+
 # ignore yarn.lock
 yarn.lock
+
