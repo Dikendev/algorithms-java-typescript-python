@@ -1,27 +1,36 @@
-function binary_search(array: number[], search: number): any {
+function binary_search(array: number[], search: number): number {
   let low: number = 0;
   let high: number = (array.length) - 1;
 
-  while (low != high) {
-    let middle: number = Math.ceil((low + high) / 2);
+  while (low <= high) {
+    let middle: number = Math.floor((low + high) / 2);
 
-    if (array[middle] > search) {
-      high = middle -1;
+    if (array[middle] == search) {
+      return middle ;
+    }
+
+    else if (search < array[middle]) {
+      high = middle - 1;
     }
 
     else {
-      low = middle;
+      low = middle + 1;
     }
   }
 
-  if (array[low] = search) {
-    return low;
-  }
-  
-  return undefined;
+  return -1;
 }
 
 let array_numbers: number[] = [1,2,3,4,5,6,7,8,9,10];
+let search: number = 3
 
-console.log(binary_search(array_numbers, 9))
+let index: number = (binary_search(array_numbers, search))
+
+if (index != -1) {
+  console.log('Number found at index', index)
+}
+else {
+  console.log('Number not found at index')
+}
+
 
