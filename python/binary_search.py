@@ -1,6 +1,6 @@
 class BinarySearch():
     
-  def search_iterative(self, array, targetNumber):
+  def search_iterative(self, list, targetNumber):
     low = 0
     high = len(list) - 1
     count = 0
