@@ -53,9 +53,25 @@ class TestBinarySearch(unittest.TestCase):
     self.assertEqual(expected_index, linear_search_index)
     self.assertTrue(binarySearch_total_time < linear_search_total_time)
 
+  def test_execution_time_for_item_at_the_beginning(self):
+    item, expected_index = 55, 10
+
+    start_time = time.time()
+    binary_search_index =binarySearch.search_iterative(list_with_1000_items, item) # => -1
+    binary_search_time = time.time() - start_time
+
+    start_time = time.time()
+    linear_search_index = list_with_1000_items.index(item)
+    linear_search_time = time.time() - start_time
+
+    self.assertEqual(expected_index, binary_search_index)
+    self.assertEqual(expected_index, linear_search_index)
+
+    self.assertTrue(binary_search_time > linear_search_time)
+
     print("--- Time required to search item at the ending ---")
-    print("--- Linear Search %f seconds ---" % (linear_search_total_time))
-    print("--- Binary Search %f seconds ---" % (binarySearch_total_time))
+    print("--- Linear Search %f seconds ---" % (binary_search_time))
+    print("--- Binary Search %f seconds ---" % (linear_search_time))
 
 if __name__ == '__main__':
   unittest.main()
