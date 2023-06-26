@@ -30,6 +30,13 @@ class TestBinarySearch(unittest.TestCase):
     # ASSERT
     self.assertEqual(expected_index, index) #> 1 == 1
   
+  def test_search_for_nonexistent_item(self):
+    item, expected_result = 100, -1
+
+    index = binarySearch.search_iterative(simple_list, item) # => -1
+
+    self.assertEqual(expected_result, index)
+
   def test_binary_search_and_linear_search_execution_time(self):
     item, expected_index = 9887, 990
 
