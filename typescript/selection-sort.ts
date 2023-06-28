@@ -24,4 +24,5 @@ function selectionSort<T>(arrayToSort: T[]): T[] {
   return sortedArray;
 }
 
-console.log(selectionSort([9, 8, 5, 4, 2,]))
+let unsorted_array: number[] = [9, 8, 5, 4, 2,]
+console.log(selectionSort(unsorted_array))
