@@ -19,10 +19,11 @@ function factorial(number: number): number {
 }
 
 // console.log(factorial(3));
+
 function sum(arr: any) {
 	let total: any = 0;
 
-	for (index = 0; index < arr.length; index++) {
+	for (let index = 0; index < arr.length; index++) {
 		console.log(total);
 		console.log(`arr`, arr);
 		total = total + arr[index];
@@ -31,18 +32,22 @@ function sum(arr: any) {
 }
 // console.log(sum(array));
 
-function recursionSum(arr: any) {
-	let total: any = 0;
-	let length: any = arr.length;
+//using loops
+function recursionSum(arr: number[]): number {
+	let total: number = 0;
+	let length: number = arr.length;
 
 	//base case
-	if (index == length) return;
+	for (let index = 0; index < length; index++) {
+		total = total + arr[index];
+		console.log(`total`, total);
+	}
+	console.log(`index`, index);
+	if (index == length) return total;
 	else {
-		for (index = 0; index < length; index++) {
-			total = total + arr[index];
-		}
+		return recursionSum(arr);
 	}
 }
-let array = [2, 4, 6];
+let array: number[] = [2, 4, 6, 3];
 
 console.log(recursionSum(array));
