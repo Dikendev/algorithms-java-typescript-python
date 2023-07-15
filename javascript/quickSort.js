@@ -3,7 +3,6 @@
  * @param {Array} array Source array
  * @returns {Array} Sorted array
  */
-console.time(`quicksort`)
 function quicksort(array) {
   //base case, array with 0 or 1 element are already sorted
   if (array.length < 2) return array;
