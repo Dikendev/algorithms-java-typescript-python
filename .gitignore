@@ -39,9 +39,6 @@ Thumbs.db
 # Ignore built ts files
 dist/**/*
 
-# ignore need js files
-*.js
-
 # ignore package files
 package-lock.json
 package.json
