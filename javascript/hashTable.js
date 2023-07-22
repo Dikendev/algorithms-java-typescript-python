@@ -45,7 +45,6 @@ function nameAsIndex(name) {
   if (!listName[name]) {
     listName[lengthOfName] = name
     console.log('saved', listName)
-
   } else {
     console.log('already saved', listName[name])
   }
@@ -56,7 +55,6 @@ console.log('obj final', listName)
 const savedByFirstLetter = {}
 function saveFistLetter(name) {
   const firstLetter = name[0]
-
   if (!savedByFirstLetter[name]) {
     savedByFirstLetter[firstLetter] = name
     console.log('saved')
@@ -64,7 +62,17 @@ function saveFistLetter(name) {
     console.log('already saved')
   }
 }
+// saveFistLetter('cirstina')
+// saveFistLetter('curioso')
 
-saveFistLetter('cirstina')
-saveFistLetter('curioso')
-console.log(savedByFirstLetter)
+const books = {};
+function BooksByAuthor(author, titles) {
+  if (!books[author]) {
+    books[author] = titles
+  } else {
+    console.log('This book already exist in hash')
+  }
+}
+// BooksByAuthor('watchmen', 'cristofer nollon')
+// BooksByAuthor('watchmen', 'cristofer nollon')
+// console.log(books)
