@@ -13,18 +13,29 @@ hashMap.set('city', 'Blumenau');
 hashMap.delete('city');
 // console.log(hashMap.entries());
 
-const MyMap = new Map();
+const myMap = new Map();
 
-MyMap.set('a', 1);
-MyMap.set('b', 2);
-MyMap.set('c', 3);
+myMap.set('a', 1);
+myMap.set('b', 2);
+myMap.set('c', 3);
 
-MyMap.forEach((value, key) => {
+myMap.forEach((value, key) => {
   console.log(`${key} => ${value}`);
 });
 
-for (const key of MyMap.keys()) {
-  console.log('oi')
-
-  console.log(key)
+for (const key of myMap.keys()) {
+  console.log('oi');
+  console.log(key);
 }
+
+const user1 = { id: 1 };
+const user2 = { id: 2 };
+const user3 = { id: 3 };
+
+const userMap = new Map();
+
+userMap.set(user1, 'John Doe')
+userMap.set(user2, 'Jane Smith')
+console.log(userMap.get(user2))
+
+console.log(userMap.get({ id: 2 }))
