@@ -1,7 +1,7 @@
 function searchNumber(number, arr) {
   for (let i = 0; i < arr.length; i++) {
     console.log(i)
-    if (arr[i] == number) {
+    if (arr[i] === number) {
       console.log(`the number: ${number} was found at index: ${i}`)
       return true
     }
