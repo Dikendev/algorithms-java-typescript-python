@@ -1,6 +1,8 @@
 /**
  * Running time = O(nˆ2)
- * Ω(n) in best case
+ * O(n) best case
+ * Ω(nˆ2) worst case
+ * O(1) Space Complexity
  * Sort numbers array unsorted  to sorted using insertion alg
  * @param {array} array of numbers unsorted 
  * @returns {array} array of numbers sorted
