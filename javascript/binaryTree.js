@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-const depthFirstValues = (root) => {
+/* const depthFirstValues = (root) => {
   if (root === null) return []
 
   const result = []
@@ -33,4 +33,14 @@ a.right = c;
 b.left = d;
 b.right = e;
 c.right = f;
-depthFirstValues(a);
+depthFirstValues(a); */
+
+
+const depthFirstValues = (root) => {
+  if (root === null) return [];
+
+  const leftValues = depthFirstValues(root.left);
+  const rightValues = depthFirstValues(root.right);
+
+  return [root.val, ...leftValues, ...rightValues];
+}
