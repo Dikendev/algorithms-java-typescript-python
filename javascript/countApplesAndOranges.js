@@ -1,3 +1,13 @@
+
+/**
+ * Count the quantity of dropped fruits inside the house range
+ * @param {number} s house initial location
+ * @param {number} t house final location
+ * @param {number} a location apple tree
+ * @param {number} b location orange tree
+ * @param {array} apples Array number of apples  
+ * @param {array} oranges Array number of oranges  
+ */
 function countApplesAndOranges(s, t, a, b, apples, oranges,) {
   let counterApple = 0;
   let counterOrange = 0;
