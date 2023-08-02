@@ -9,23 +9,15 @@
  * @param {array} oranges Array number of oranges  
  */
 function countApplesAndOranges(s, t, a, b, apples, oranges,) {
-  let counterApple = 0;
-  let counterOrange = 0;
 
-  for (const apple of apples) {
-    if ((apple + a) >= s && (apple + a) <= t) {
-      counterApple++
-    }
-  }
+  const countInRange = (treePosition, offsets) =>
+    offsets.reduce((count, offset) => count + (treePosition + offset >= s && treePosition + offset <= t), 0);
 
-  for (const orange of oranges) {
-    if ((orange + b) >= s && (orange + b) <= t) {
-      counterOrange++
-    }
+  const appleCount = countInRange(a, apples)
+  const orangeCount = countInRange(b, oranges)
 
-  }
-  console.log(counterApple)
-  console.log(counterOrange)
+  console.log(appleCount)
+  console.log(orangeCount)
 }
 
 let apples = [2, 3, -4]
