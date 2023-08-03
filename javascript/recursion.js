@@ -32,7 +32,7 @@ var result = [];
  */
 function flattenArray(arr, i) {
   if (i >= arr.length) {
-    return
+    return;
   }
   if (Array.isArray(arr[i])) {
     flattenArray(arr[i], 0);
@@ -51,7 +51,7 @@ function factorial(i) {
   if (i > 1) {
     return factorial(i - 1) * i;
   }
-  return 1
+  return 1;
 }
 
 /**
@@ -68,4 +68,12 @@ function findFib(n) {
   return findFib(n - 1) + findFib(n - 2);
 }
 
-console.log(findFib(40));
+let arr = [2, 12, 34, 54, 41];
+
+function printArray(arr, i) {
+  if (i >= arr.length) {
+    return;
+  }
+  console.log(`Element at index ${i} i ${arr[i]}`);
+}
+printArray(arr, i + 1);
