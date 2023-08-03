@@ -30,5 +30,10 @@ function flattenArray(arr, i) {
   flattenArray(arr, i + 1)
 }
 
-flattenArray(arr, 0)
-console.log(result)
+function factorial(i) {
+  if (i > 1) {
+    return factorial(i - 1) * i;
+  }
+  return 1
+}
+console.log(factorial(5))
