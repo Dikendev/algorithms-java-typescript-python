@@ -22,7 +22,7 @@ function digitSum(num) {
   return num % 10 + digitSum(Math.floor(num / 10));
 }
 
-var arr = [2, [3, 12, 24], 17, [54, [24, 3], 8]];
+// var arr = [2, [3, 12, 24], 17, [54, [24, 3], 8]];
 var result = [];
 
 /**
@@ -70,10 +70,16 @@ function findFib(n) {
 
 let arr = [2, 12, 34, 54, 41];
 
+/**
+ * Find the index of a specific number
+ * @param {Arr} arr - Array numbers to search 
+ * @param {*} i - index
+ * @returns 
+ */
 function printArray(arr, i) {
   if (i >= arr.length) {
     return;
   }
-  console.log(`Element at index ${i} i ${arr[i]}`);
+  console.log(`Element at index ${i} is ${arr[i]}`);
 }
-printArray(arr, i + 1);
+printArray(arr, 0);
