@@ -23,7 +23,7 @@ function digitSum(num) {
 }
 
 // var arr = [2, [3, 12, 24], 17, [54, [24, 3], 8]];
-var result = [];
+// var result = [];
 
 /**
  * Flattens a nested array.
@@ -68,7 +68,7 @@ function findFib(n) {
   return findFib(n - 1) + findFib(n - 2);
 }
 
-let arr = [2, 12, 34, 54, 41];
+// let arr = [2, 12, 34, 54, 41];
 
 /**
  * Find the index of a specific number
@@ -82,4 +82,31 @@ function printArray(arr, i) {
   }
   console.log(`Element at index ${i} is ${arr[i]}`);
 }
-printArray(arr, 0);
+// printArray(arr, 0);
+
+
+let arr = [2, 16, 23, 33, 41, 51, 73];
+
+function findElement(arr, x, low, high) {
+  let mid = low + high / 2;
+
+  if (low > high) {
+    return -1;
+  } else {
+    if (x === arr[mid]) {
+      return mid;
+    } else if (x > arr[mid]) {
+      return findElement(arr, x, mid + 1, high)
+    }
+    else {
+      return findElement(arr, x, low, mid - 1);
+    }
+  }
+}
+
+function searchElement(arr, x) {
+  const index = findElement(arr, x, 0, arr.length - 1);
+  console.log(`${x} is found at index ${index}`)
+}
+
+searchElement(arr, 51);
