@@ -5,8 +5,6 @@
  */
 const maxValue = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
-    console.log(arr.length - 1)
-
     if (arr[i] > arr[i + 1]) {
       let temp = arr[i];
       arr[i] = arr[i + 1];
@@ -16,5 +14,5 @@ const maxValue = (arr) => {
   let maxValue = arr[arr.length - 1];
   return maxValue
 }
-let scores = [60, 50, 95, 80, 70]
+let scores = [60, 100, 50, 95, 80, 70]
 console.log(maxValue(scores))
