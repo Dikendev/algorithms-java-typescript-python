@@ -1,5 +1,5 @@
 /**
- * 
+ * Return the max value from numbers array
  * @param {Array} arr - Array of numbers unordered
  * @returns {number} the max value of array using temp variable.
  */
