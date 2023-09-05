@@ -3,7 +3,6 @@ export {};
 type Fn = (...params: any) => any;
 
 function memoize(fn: Fn): Fn {
-	//counter para os inputs,
 	let mem: any = {};
 	return function (...args) {
 		let key = args.join("-");
@@ -19,31 +18,13 @@ function memoize(fn: Fn): Fn {
 	};
 }
 
-const func = (n: number, b: number) => {
-	return n + b;
-};
-
-const fib = (n: number): number => {
-	if (n <= 1) {
-		return 1;
-	} else {
-		return fib(n - 1) + fib(n - 2);
-	}
-};
-
-const factorial = (n: number): number => {
-	if (n <= 1) {
-		return 1;
-	} else {
-		return factorial(n - 1) * n;
-	}
-};
-
-const nada: number[] = [];
+const func = (n: number, b: number) => n + b;
+const fib = (n: number): number => (n <= 1 ? 1 : fib(n - 1) + fib(n - 2));
+const factorial = (n: number): number => (n <= 1 ? 1 : factorial(n - 1) * n);
+const empty: number[] = [];
 const memoizedFn = memoize(fib);
-
 memoizedFn(5);
-memoizedFn(nada);
+memoizedFn(empty);
 
 /**
  * let callCount = 0;
