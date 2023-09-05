@@ -3,18 +3,10 @@ export {};
 type Fn = (...params: any) => any;
 
 function memoize(fn: Fn): Fn {
-	let mem: any = {};
-	return function (...args) {
-		let key = args.join("-");
-		console.log(key);
-		if (key in mem) {
-			console.log("mem", mem);
-
-			return mem[key];
-		} else {
-			console.log("mem", mem);
-			return (mem[key] = fn(...args));
-		}
+	const mem: Record<string, any> = {};
+	return (...args) => {
+		const key = args.join("-");
+		return key in mem ? mem[key] : (mem[key] = fn(...args));
 	};
 }
 
