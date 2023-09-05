@@ -1,10 +1,10 @@
 type Fn = (...args: any[]) => any;
 
 function once(fn: Fn): Fn {
-	let count = 0;
+	let isDone: boolean = false;
 	return function (...args) {
-		if (count != 0) return undefined;
-		count++;
+		if (isDone) return undefined;
+		isDone = true;
 		return fn(...args);
 	};
 }
