@@ -1,22 +1,28 @@
-function breakingRecords(scores: number[]) /* number[] */ {
-	// Write your code here
+function breakingRecords(scores: number[]): number[] {
+	let minCounter: number = 0;
+	let maxCounter: number = 0;
 
 	let lowerScore: number = 0;
 	let higherScore: number = 0;
-	console.log("scores", scores);
 
 	for (let i = 0; i < scores.length; i++) {
-		console.log("each", scores[i]);
-
-		if (lowerScore < scores[i]) {
+		if (i === 0) {
 			lowerScore = scores[i];
-			console.log("lowerScore oioioi", lowerScore);
+			higherScore = scores[i];
+		}
 
-			console.log("lowerScore", lowerScore);
+		if (scores[i] > higherScore) {
+			maxCounter++;
+			higherScore = scores[i];
+		}
+
+		if (scores[i] < lowerScore) {
+			minCounter++;
+			lowerScore = scores[i];
 		}
 	}
-	console.log("higherScore", higherScore);
+	return [maxCounter, minCounter];
 }
 
-let arrGames = [10, 5, 20, 20, 4, 5, 2, 25, 1];
+let arrGames = [];
 breakingRecords(arrGames);
