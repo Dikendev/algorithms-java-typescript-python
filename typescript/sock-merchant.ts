@@ -4,8 +4,6 @@ function sockMerchant(n: number, ar: number[]): any {
 	const sockPars = new Map<number, number>();
 	let totalPairs: number = 0;
 	for (let i = 0; i < n; i++) {
-		console.log("n", ar[i]);
-
 		if (!sockPars.has(ar[i])) {
 			sockPars.set(ar[i], 1);
 		} else {
