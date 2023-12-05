@@ -1,4 +1,7 @@
 export {};
+
+let numberArray: number[] = [3, 2, 2, 3];
+
 function removeElement(nums: number[], vol: number): number {
 	let counter = 0;
 	for (let i = 0; i < nums.length; i++) {

@@ -1,8 +1,6 @@
 export {};
 
 function sockMerchant(n: number, ar: number[]): any {
-	console.log("oi");
-
 	const sockPars = new Map<number, number>();
 	console.log("n", n);
 	let totalPairs: number = 0;
