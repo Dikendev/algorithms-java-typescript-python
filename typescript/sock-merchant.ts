@@ -7,8 +7,6 @@ function sockMerchant(n: number, ar: number[]): any {
 		if (!sockPars.has(ar[i])) {
 			sockPars.set(ar[i], 1);
 		} else {
-			console.log("22222");
-
 			const data = sockPars.get(ar[i]);
 			if (data) {
 				if (data % 2 == 0) {
