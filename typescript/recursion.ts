@@ -4,9 +4,6 @@
  */
 
 function countdown(i: number): void {
-	console.log(i);
-	//base case
-
 	if (i <= 0) return;
 	countdown(--i);
 }
@@ -17,8 +14,6 @@ function factorial(number: number): number {
 	if (number == 1) return 1;
 	else return number * factorial(number - 1);
 }
-
-// console.log(factorial(3));
 
 function sum(arr: any) {
 	let total: any = 0;
@@ -38,11 +33,12 @@ function recursionSum(arr: number[]): number {
 	//base case
 	for (let index = 0; index < length; index++) {
 		total = total + arr[index];
+
+		if (index == length) return total;
+		else {
+		}
 	}
-	if (index == length) return total;
-	else {
-		return recursionSum(arr);
-	}
+	return recursionSum(arr);
 }
 let array: number[] = [2, 4, 6, 3];
 
