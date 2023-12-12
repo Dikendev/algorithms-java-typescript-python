@@ -25,12 +25,10 @@ function sum(arr: any) {
 
 	for (let index = 0; index < arr.length; index++) {
 		console.log(total);
-		console.log(`arr`, arr);
 		total = total + arr[index];
 	}
 	return total;
 }
-// console.log(sum(array));
 
 //using loops
 function recursionSum(arr: number[]): number {
