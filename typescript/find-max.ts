@@ -23,7 +23,6 @@ const findMax = (arr: number[]): Record<number, number> | null => {
 	}
 
 	console.log("maxfinal,", totalMax);
-	console.log("maxNumberRecord,", maxNumberRecord);
 
 	return totalMax;
 };
