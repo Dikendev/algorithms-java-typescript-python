@@ -3,7 +3,6 @@ function reverse_a_number(num: number): number {
 	while (num !== 0) {
 		reversed_num = reversed_num * 10 + (num % 10);
 		num = Math.floor(num / 10);
-		console.log("num", num);
 	}
 	return reversed_num;
 }
