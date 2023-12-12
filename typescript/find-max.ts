@@ -2,7 +2,6 @@ export {};
 const arr: number[] = [1, 1, 7, 7, 4, 4, 3, 7, 2, 2, 2, 2, 2];
 
 //find the most repeated number
-
 const findMax = (arr: number[]): Record<number, number> | null => {
 	if (arr.length === 0) return null;
 	let totalMax: Record<number, number> = {};
