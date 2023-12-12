@@ -14,7 +14,6 @@ console.log(plusOne(teste));
 const textint = teste.toString().split(",").join("");
 const slite = textint.slice(teste.length / 2, teste.length);
 
-console.log("textint", textint);
 console.log("slite", Number(slite) + 1);
 
 let number: number[] = [10];
