@@ -2,7 +2,6 @@ export {};
 
 function searchInsert(nums: number[], target: number): number {
 	for (let i = 0; i < nums.length; i++) {
-		console.log(nums[i], "target", target);
 		if (target == nums[i]) {
 			return i;
 		}
