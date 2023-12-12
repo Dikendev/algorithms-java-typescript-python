@@ -13,7 +13,6 @@ function findMaxConsecutiveOnes(nums: number[]): number[] {
 			counterOfOnes = 0;
 		}
 	}
-	console.log("nums", nums);
 
 	return nums;
 }
