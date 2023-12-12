@@ -3,8 +3,6 @@ function findMaxConsecutiveOnes(nums: number[]): number[] {
 	let maxCount: number = 0;
 
 	for (let i = 0; i < nums.length; i++) {
-		console.log("nums", nums[i]);
-
 		if (nums[i] === 1) {
 			counterOfOnes++;
 			maxCount = Math.max(maxCount, counterOfOnes);
@@ -12,10 +10,8 @@ function findMaxConsecutiveOnes(nums: number[]): number[] {
 			counterOfOnes = 0;
 		}
 	}
-
 	return nums;
 }
-
 let nums = [1, 1, 0, 1, 1, 1];
 findMaxConsecutiveOnes(nums);
 
