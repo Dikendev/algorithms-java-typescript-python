@@ -39,7 +39,6 @@ function recursionSum(arr: number[]): number {
 	for (let index = 0; index < length; index++) {
 		total = total + arr[index];
 	}
-	console.log(`index`, index);
 	if (index == length) return total;
 	else {
 		return recursionSum(arr);
