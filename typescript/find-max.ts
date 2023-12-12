@@ -21,9 +21,6 @@ const findMax = (arr: number[]): Record<number, number> | null => {
 			totalMax;
 		}
 	}
-
-	console.log("maxfinal,", totalMax);
-
 	return totalMax;
 };
 console.log(findMax([1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 5, 5, 5, 6, 6, 6, 6]));
