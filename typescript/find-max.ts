@@ -15,7 +15,6 @@ const findMax = (arr: number[]): Record<number, number> | null => {
 			};
 
 			Object.values(maxNumberRecord);
-			console.log(`maxNumberRecord`, maxNumberRecord);
 		} else {
 			totalMax[arr[i]] = 1;
 
