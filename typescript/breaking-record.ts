@@ -13,7 +13,6 @@ function breakingRecords(scores: number[]): any {
 			highScore = scores[i];
 		}
 	}
-	console.log("lowScore", lowScore);
 }
 
 const scores: number[] = [12, 24, 10, 24];
