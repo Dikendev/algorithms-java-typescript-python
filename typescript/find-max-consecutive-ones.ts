@@ -14,7 +14,6 @@ function findMaxConsecutiveOnes(nums: number[]): number[] {
 		}
 	}
 	console.log("nums", nums);
-	console.log("maxCount", maxCount);
 
 	return nums;
 }
