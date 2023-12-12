@@ -3,11 +3,10 @@
  * @param array - array of numbers;
  * @param targetNumber - number
  * @returns number
- * 
+ *
  * Big O notation
  * O(log n)
-*/
-
+ */
 function binary_search<T>(array: T[], targetNumber: T): number | null {
 	let low: number = 0;
 	let high: number = array.length - 1;
@@ -18,7 +17,6 @@ function binary_search<T>(array: T[], targetNumber: T): number | null {
 		let guess: T = array[middle];
 
 		if (guess == targetNumber) {
-			console.log("steps to find: ", count);
 			return middle;
 		} else if (targetNumber < guess) {
 			//count to find how much search
@@ -48,8 +46,7 @@ if (index != -1) {
 /*
  * Find maximum steps to find a number.
  *
-*/
-
+ */
 const searchNumber: number = 256;
 const numberArray: number[] = [];
 
