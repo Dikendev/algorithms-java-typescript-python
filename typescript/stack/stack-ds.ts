@@ -26,8 +26,13 @@ export class Stack<T> {
 		return this.top;
 	}
 
-	clear() {
-		this.top = 0;
-		this.dataStore.length = 0;
+	clear(): string {
+		try {
+			this.top = 0;
+			this.dataStore.length = 0;
+			return "All deleted";
+		} catch {
+			return "Something wrong happened";
+		}
 	}
 }
