@@ -1,28 +1,49 @@
 export {};
 
-export class Stack<T> {
+interface StackStore<T> {
+	push(element: T): string;
+	pop(): string;
+	peek(): string;
+	size(): number;
+	clear(): string;
+}
+
+export class Stack<T> implements StackStore<T> {
 	private dataStore: T[] = [];
-	top: number;
-	len: number = 0;
+	private top: number;
 
 	constructor() {
 		this.dataStore = [];
 		this.top = 0;
 	}
 
-	push(element: T): void {
+	push(element: T): string {
 		this.dataStore[this.top++] = element;
+		return `${element} added`;
 	}
 
-	pop(): T {
-		return this.dataStore[--this.top];
+	pop(): string {
+		try {
+			const removedElement = this.dataStore[--this.top];
+			return `Element ${removedElement} deleted from stack`;
+		} catch {
+			return "Something wrong happened";
+		}
 	}
 
-	peek(): T {
-		return this.dataStore[this.top - 1];
+	peek(): string {
+		if (
+			!this.dataStore[this.top - 1] ||
+			this.dataStore[this.top - 1] === undefined
+		) {
+			return "Empty Stack";
+		} else {
+			const element = this.dataStore[this.top - 1];
+			return `Top element: ${element}`;
+		}
 	}
 
-	size() {
+	size(): number {
 		return this.top;
 	}
 
@@ -30,7 +51,7 @@ export class Stack<T> {
 		try {
 			this.top = 0;
 			this.dataStore.length = 0;
-			return "All deleted";
+			return `Deleted top element: ${this.top} | length stack: ${this.dataStore.length}`;
 		} catch {
 			return "Something wrong happened";
 		}
