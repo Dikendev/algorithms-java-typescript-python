@@ -24,11 +24,11 @@ export class Stack<T> implements StackStore<T> {
 	}
 
 	pop(): string {
-		try {
-			const removedElement = this.dataStore[--this.top];
-			return `Element ${removedElement} deleted from stack`;
-		} catch {
+		const removedElement = this.dataStore[--this.top];
+		if (!removedElement) {
 			return "Something wrong happened";
+		} else {
+			return `Element ${removedElement} deleted from stack`;
 		}
 	}
 
@@ -37,7 +37,7 @@ export class Stack<T> implements StackStore<T> {
 			!this.dataStore[this.top - 1] ||
 			this.dataStore[this.top - 1] === undefined
 		) {
-			return "Empty Stack";
+			return "Stack is empty ";
 		} else {
 			const element = this.dataStore[this.top - 1];
 			return `Top element: ${element}`;
@@ -49,12 +49,8 @@ export class Stack<T> implements StackStore<T> {
 	}
 
 	clear(): string {
-		try {
-			this.top = 0;
-			this.dataStore.length = 0;
-			return `Deleted top element: ${this.top} | length stack: ${this.dataStore.length}`;
-		} catch {
-			return "Something wrong happened";
-		}
+		this.top = 0;
+		this.dataStore.length = 0;
+		return `Deleted top element: ${this.top} | length stack: ${this.dataStore.length}`;
 	}
 }
