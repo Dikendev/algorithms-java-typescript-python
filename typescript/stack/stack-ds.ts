@@ -1,4 +1,5 @@
 export {};
+// LIFO (last in first out)
 
 interface StackStore<T> {
 	push(element: T): string;
