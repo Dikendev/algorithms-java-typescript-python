@@ -1,18 +1,19 @@
 export {};
 
-function reverseString<T>(word: string): string {
-	let stack: string[] = [];
+function reverse<T>(word: T[]): T[] {
+	let stack: T[] = [];
 
 	for (let i = 0; i < word.length; i++) {
 		stack.push(word[i]);
 	}
-	let reverseString = "";
+	let result: T[] = [];
 
 	while (stack.length > 0) {
-		reverseString += stack.pop();
+		result.push(stack.pop()!);
 	}
-	return reverseString;
+
+	return result;
 }
 
-const word = "abra kadabra";
-console.log(reverseString(word));
+const word = Array.from("2 @3232");
+console.log(reverse(word).join(""));
