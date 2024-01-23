@@ -1,3 +1,4 @@
+export {};
 function birthday(s: number[], d: number, m: number): number {
 	// Write your code here
 	let counter: number = 0;
@@ -5,12 +6,10 @@ function birthday(s: number[], d: number, m: number): number {
 	for (let i = 0; i < s.length; i++) {
 		let numsToSum: number[] = [];
 		console.log("counter", counter);
-
 		if (m > 1) {
-			for (let j = 1; j < s.length; j++) {
-				const sumINdex = j + counter;
-				console.log(sumINdex, "sumINdex");
+			for (let j = 1; j < s.length - 1; j++) {
 				numsToSum.push(s[j]);
+				console.log(j, "jssssss");
 
 				if (j === m) {
 					console.log(j, "j", "m", m);
