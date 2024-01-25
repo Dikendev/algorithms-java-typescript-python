@@ -1,5 +1,5 @@
 function reverse(arr) {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length / 2; i++) {
     let temp = arr[i]
     arr[i] = arr[arr.length - i - 1]
     arr[arr.length - i - 1] = temp
@@ -7,5 +7,5 @@ function reverse(arr) {
 }
 
 const array = [50, 60, 70, 80, 90]
-const newarr = reverse(array)
-console.log(newarr)
+reverse(array)
+console.log(array)
