@@ -8,4 +8,3 @@ function reverse(arr) {
 
 const array = [50, 60, 70, 80, 90]
 reverse(array)
-console.log(array)
