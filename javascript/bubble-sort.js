@@ -16,4 +16,3 @@ const bubbleSort = arr => {
   return arr
 }
 const arr = [10, 9, 1, 4, 2, 3]
-console.log(bubbleSort(arr))
