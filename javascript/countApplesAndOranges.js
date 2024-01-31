@@ -16,8 +16,6 @@ function countApplesAndOranges(s, t, a, b, apples, oranges,) {
   const appleCount = countInRange(a, apples)
   const orangeCount = countInRange(b, oranges)
 
-  console.log(appleCount)
-  console.log(orangeCount)
 }
 
 let apples = [2, 3, -4]
