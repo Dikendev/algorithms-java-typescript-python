@@ -1,11 +1,9 @@
 const bookText = `It is a truth universally acknowledged, 
 that a single man in possession of a good fortune, 
 must be in want of a wife.`;
-// console.log(bookText)
 
 const wordFrequencyMap = new Map();
 const words = bookText.split(/\W+/)
-// console.log(words)
 
 for (const word of words) {
   const lowercaseWord = word.toLowerCase()
@@ -13,7 +11,6 @@ for (const word of words) {
   wordFrequencyMap.set(lowercaseWord, currentCount + 1);
 }
 
-// console.log(wordFrequencyMap)
 class PhoneBook {
   constructor() {
     this.contacts = new Map();
@@ -36,10 +33,6 @@ const hitchhikersGuide = new PhoneBook();
 hitchhikersGuide.addContact('Arthur Dent', '122-321-324-2132');
 hitchhikersGuide.addContact('Ford Prefect', '232-432-534-2333');
 hitchhikersGuide.addContact('Trillian', '231-444-643-578-666');
-
-// console.log(hitchhikersGuide.getPhoneNumber('Arthur Dent'))
-// console.log(hitchhikersGuide.getPhoneNumber('Zaphod Beeblebrox')); // Output: Contact not found
-// console.log(hitchhikersGuide.getAllContacts())
 
 /**
  * Find unique numbers in a array
