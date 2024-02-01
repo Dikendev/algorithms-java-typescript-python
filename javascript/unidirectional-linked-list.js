@@ -47,6 +47,20 @@ class LinkedList {
     p.next = newNode
   }
 
+  remove(removePosition) {
+    let p = this.head;
+    let i = 0;
+
+    while (p.next != null && i < removePosition - 1) {
+      p = p.next;
+      i++;
+    }
+
+    let temp = p.next;
+    p.next = p.next.next;
+    temp.next = null;
+  }
+
   print(node) {
     let p = node;
 
@@ -57,12 +71,14 @@ class LinkedList {
     };
     console.log(`End`)
   }
+
+
 }
 
 const linkedList = new LinkedList()
 const head = linkedList.init()
 
 linkedList.add(new Node("Walnut", null))
-linkedList.insert(2, new Node("Walnut", null))
-
+linkedList.insert(3, new Node("Js", null))
+linkedList.remove(5)
 linkedList.print(head)
