@@ -55,7 +55,6 @@ class LinkedList {
       console.log(`${data} + ->`);
       p = p.next;
     };
-
     console.log(`End`)
   }
 }
