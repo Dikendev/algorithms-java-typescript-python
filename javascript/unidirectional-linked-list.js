@@ -36,6 +36,17 @@ class LinkedList {
     this.tail = newNode;
   }
 
+  insert(insertPosition, newNode) {
+    let p = this.head;
+    let i = 0;
+    while (p.next != null && i < insertPosition - 1) {
+      p = p.next;
+      i++
+    }
+    newNode.next = p.next;
+    p.next = newNode
+  }
+
   print(node) {
     let p = node;
 
@@ -53,4 +64,6 @@ const linkedList = new LinkedList()
 const head = linkedList.init()
 
 linkedList.add(new Node("Walnut", null))
+linkedList.insert(2, new Node("Walnut", null))
+
 linkedList.print(head)
