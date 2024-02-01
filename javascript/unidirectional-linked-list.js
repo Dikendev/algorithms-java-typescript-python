@@ -24,10 +24,16 @@ class LinkedList {
     let nodeBerkeley = new Node("Berkeley", null);
     nodeOakland.next = nodeBerkeley
 
+    // the last node called tail node
     this.tail = new Node("Fremont", null);
     nodeBerkeley.next = this.tail;
 
     return this.head;
+  }
+
+  add(newNode) {
+    this.tail.next = newNode;
+    this.tail = newNode;
   }
 
   print(node) {
@@ -45,4 +51,6 @@ class LinkedList {
 
 const linkedList = new LinkedList()
 const head = linkedList.init()
+
+linkedList.add(new Node("Walnut", null))
 linkedList.print(head)
