@@ -4,7 +4,6 @@ function birthday(s: number[], d: number, m: number): number {
 	let counts = 0;
 	for (let i = 0; i < s.length; i++) {
 		let numsToSum: number[] = [];
-		console.log("counter", counter);
 		if (m > 1) {
 			for (let j = 1; j < s.length - 1; j++) {
 				numsToSum.push(s[j]);
