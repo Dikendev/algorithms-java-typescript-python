@@ -33,4 +33,28 @@ class DoubleLinkList {
     nodeBerkeley.next = this.tail;
     return this.head;
   }
+
+  print(node) {
+    let p = node;
+    let end = null;
+    while (p != null) {
+      let data = p.getData()
+      console.log(`${data} ->`)
+      end = p;
+      p = p.next;
+    }
+    console.log('End')
+
+    p = end;
+    while (p != null) {
+      let data = p.getData();
+      console.log(`${data} ->`)
+      p = p.prev
+    }
+    console.log('Start')
+  }
 }
+
+let doubleLinkList = new DoubleLinkList();
+let head = doubleLinkList.init()
+doubleLinkList.print(head)
