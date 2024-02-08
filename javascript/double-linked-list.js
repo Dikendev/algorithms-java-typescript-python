@@ -16,7 +16,6 @@ class DoubleLinkList {
     this.head.prev = null;
     this.head.next = null;
 
-
     let nodeOakland = new Node("Oakland");
     nodeOakland.prev = this.head;
     nodeOakland.next = null;
@@ -32,6 +31,12 @@ class DoubleLinkList {
     this.tail.next = null;
     nodeBerkeley.next = this.tail;
     return this.head;
+  }
+
+  add(newNode) {
+    this.tail.next = newNode;
+    newNode.prev = this.tail;
+    this.tail = newNode;
   }
 
   print(node) {
