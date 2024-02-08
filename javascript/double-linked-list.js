@@ -62,4 +62,5 @@ class DoubleLinkList {
 
 let doubleLinkList = new DoubleLinkList();
 let head = doubleLinkList.init()
+doubleLinkList.add(new Node("Walmut"));
 doubleLinkList.print(head)
