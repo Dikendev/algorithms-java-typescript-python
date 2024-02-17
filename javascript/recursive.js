@@ -3,4 +3,3 @@ function recursive(array) {
 
   return array[0] + recursive(array.slice(1))
 }
-
