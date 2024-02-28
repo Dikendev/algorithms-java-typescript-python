@@ -52,6 +52,21 @@ class DoubleLinkList {
     newNode.next.prev = newNode;
   }
 
+  remove(removePosition) {
+    let p = this.head;
+    let i = 0;
+
+    while (p.next != null && i < removePosition - 1) {
+      p = p.next;
+      i++;
+    }
+    let temp = p.next;
+    p.next = p.next.next;
+    p.next.prev = p;
+    temp.next = null;
+    temp.prev = null
+  }
+
   print(node) {
     let p = node;
     let end = null;
@@ -76,4 +91,5 @@ class DoubleLinkList {
 let doubleLinkList = new DoubleLinkList();
 let head = doubleLinkList.init()
 doubleLinkList.insert(1, new Node('Walnut'));
+doubleLinkList.remove(2)
 doubleLinkList.print(head)
