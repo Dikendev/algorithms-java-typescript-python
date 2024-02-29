@@ -19,6 +19,18 @@ class DoubleCircleLink {
     let nodeB = new Node("B");
     nodeB.next = null;
     nodeB.prev = this.head
+    this.head.next = nodeB
+
+    let nodeC = new Node("C")
+    nodeC.next = null;
+    nodeC.prev = nodeB;
+    nodeB.next = nodeC
+
+    this.tail = new Node("D")
+    this.tail.next = this.head
+    this.tail.prev = nodeC
+    nodeC.next = this.tail
+    this.head.prev = this.tail
   }
 
   print() {
