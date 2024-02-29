@@ -33,6 +33,20 @@ class DoubleCircleLink {
     this.head.prev = this.tail
   }
 
+  insert(insertPosition, newNode) {
+    let p = this.head;
+    let i = 0;
+    while (p.next != null && i < insertPosition - 1) {
+      p = p.next;
+      i++
+    }
+
+    newNode.next = p.next;
+    p.next = newNode;
+    newNode.prev = p
+    newNode.next.prev = newNode
+  }
+
   print() {
     let p = this.head;
     do {
@@ -57,4 +71,5 @@ class DoubleCircleLink {
 
 const doubleCircleLink = new DoubleCircleLink()
 doubleCircleLink.init()
+doubleCircleLink.insert(2, new Node("E"))
 doubleCircleLink.print()
