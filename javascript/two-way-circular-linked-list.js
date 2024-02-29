@@ -18,19 +18,19 @@ class DoubleCircleLink {
 
     let nodeB = new Node("B");
     nodeB.next = null;
-    nodeB.prev = this.head
-    this.head.next = nodeB
+    nodeB.prev = this.head;
+    this.head.next = nodeB;
 
     let nodeC = new Node("C")
     nodeC.next = null;
     nodeC.prev = nodeB;
-    nodeB.next = nodeC
+    nodeB.next = nodeC;
 
     this.tail = new Node("D")
-    this.tail.next = this.head
-    this.tail.prev = nodeC
-    nodeC.next = this.tail
-    this.head.prev = this.tail
+    this.tail.next = this.head;
+    this.tail.prev = nodeC;
+    nodeC.next = this.tail;
+    this.head.prev = this.tail;
   }
 
   insert(insertPosition, newNode) {
@@ -38,13 +38,28 @@ class DoubleCircleLink {
     let i = 0;
     while (p.next != null && i < insertPosition - 1) {
       p = p.next;
-      i++
+      i++;
     }
 
     newNode.next = p.next;
     p.next = newNode;
-    newNode.prev = p
-    newNode.next.prev = newNode
+    newNode.prev = p;
+    newNode.next.prev = newNode;
+  }
+
+  remove(removePosition) {
+    let p = this.head;
+    let i = 0;
+    while (p.next != null && i < removePosition - 1) {
+      p = p.next;
+      i++;
+    }
+
+    let temp = p.next
+    p.next = p.next.next;
+    p.next.prev = p;
+    temp.next = null
+    temp.prev = null
   }
 
   print() {
@@ -52,7 +67,7 @@ class DoubleCircleLink {
     do {
       let data = p.getData();
       console.log(data);
-      p = p.next
+      p = p.next;
     } while (p != this.head);
     let data = p.getData();
     console.log(data);
@@ -64,12 +79,13 @@ class DoubleCircleLink {
       p = p.prev;
     } while (p != this.tail);
 
-    data = p.getData()
-    console.log(data)
+    data = p.getData();
+    console.log(data);
   }
 }
 
-const doubleCircleLink = new DoubleCircleLink()
-doubleCircleLink.init()
-doubleCircleLink.insert(2, new Node("E"))
-doubleCircleLink.print()
+const doubleCircleLink = new DoubleCircleLink();
+doubleCircleLink.init();
+doubleCircleLink.insert(2, new Node("E"));
+doubleCircleLink.remove(3);
+doubleCircleLink.print();
