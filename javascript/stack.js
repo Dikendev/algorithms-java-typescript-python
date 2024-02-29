@@ -1,4 +1,4 @@
-class node {
+class Node {
   constructor(data, next) {
     this.data = data;
     this.next = next;
@@ -27,15 +27,36 @@ class Stack {
   }
 
   pop() {
-    if (this.top === null) {
-      return null
+    if (this.top == null) {
+      return null;
     }
 
-    let p = this.top
-    this.top = this.top.next
+    let p = this.top;
+    this.top = this.top.next;
     p.next = null;
 
     this.size--
     return p
   }
+
+  size() {
+    return this.size;
+  }
 }
+
+function print(stack) {
+  console.log('TOP')
+  let node = null;
+  while ((node = stack.pop()) != null) {
+    console.log(node.getData())
+  }
+  console.log("END")
+}
+
+let stack = new Stack()
+stack.push("A")
+stack.push("B")
+stack.push("C")
+stack.push("D")
+stack.pop()
+print(stack)
