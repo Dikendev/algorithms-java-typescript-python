@@ -10,11 +10,11 @@ function quicksort(array) {
   let pivot = array[0];
   // partitioning the lefts arrays.
   // sub-arrays of all the elements less than the pivot
-  let less = array.slice(1).filter(function (element) {
+  let less = array.slice(1).filter((element) => {
     return element <= pivot;
   })
   //sub-array of all the elements greater than the pivot
-  let greater = array.slice(1).filter(function (element) {
+  let greater = array.slice(1).filter((element) => {
     return element > pivot;
   })
 
@@ -22,4 +22,4 @@ function quicksort(array) {
 }
 
 let numbersArray = [2, 5, 7, 4, 9, 1];
-console.log(quicksort(numbersArray));
+console.log(quicksort(numbersArray))
