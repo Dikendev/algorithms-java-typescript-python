@@ -1,4 +1,3 @@
-import { Node } from "./node";
 
 class BinaryTree {
   getRoot() {
@@ -6,6 +5,7 @@ class BinaryTree {
   }
 
   inOrder(root) {
+    console.log(22)
     if (root == null) {
       return;
     }
@@ -37,3 +37,7 @@ class BinaryTree {
     }
   }
 }
+let binaryTree = new BinaryTree()
+binaryTree.insert(binaryTree.getRoot(), 60)
+console.log(`in order traversal binary search tree`)
+binaryTree.inOrder(binaryTree.getRoot())
