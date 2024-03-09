@@ -12,5 +12,4 @@ function linearSearch(array: number[], value: number) {
 	return index;
 }
 
-console.log(linearSearch([2, 3, 4, 5], 4));
 export default linearSearch;
