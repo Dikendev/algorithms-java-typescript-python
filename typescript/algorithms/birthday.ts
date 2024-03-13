@@ -1,4 +1,4 @@
-export {};
+bexport {};
 function birthday(s: number[], d: number, m: number): number {
 	let counter: number = 0;
 	let counts = 0;
