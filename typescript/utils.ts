@@ -37,4 +37,35 @@ export class Utils {
 	public static eq<T>(a: T, b: T): boolean {
 		return a === b;
 	}
+
+	public static minIndex<T>(
+		array: T[],
+		from: number = 0,
+		to: number = array.length,
+		comparator: SortingComparator<T> = Utils.gt
+	) {
+		const arraySize: number = to;
+		let lowestIndex: number = from;
+		for (let i = from; i < arraySize; i++) {
+			if (comparator(array[lowestIndex], array[i])) {
+				lowestIndex = i;
+			}
+		}
+		return lowestIndex;
+	}
+
+	public static findIndexBy<T>(
+		array: T[],
+		comparator: (el: T, index?: number, array?: T[]) => boolean
+	) {
+		let lowestIndex: number = -1;
+		array.some((entry, index) => {
+			if (comparator(entry, index, array)) {
+				lowestIndex = index;
+				return true;
+			}
+			return false;
+		});
+		return lowestIndex;
+	}
 }
