@@ -1,3 +1,5 @@
+import { SortingComparator } from "./custom-types/sorting-comparator";
+
 export class Utils {
 	public static range(start: number, end: number, step: number = 1): number[] {
 		let i = start;
@@ -22,5 +24,17 @@ export class Utils {
 		to: number
 	): void {
 		[array[from], array[to]] = [array[to], array[from]];
+	}
+
+	public static lt<T>(a: T, b: T): boolean {
+		return a < b;
+	}
+
+	public static gt<T>(a: T, b: T): boolean {
+		return a > b;
+	}
+
+	public static eq<T>(a: T, b: T): boolean {
+		return a === b;
 	}
 }
