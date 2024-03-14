@@ -9,4 +9,18 @@ export class Utils {
 
 		return output;
 	}
+
+	public static swapValues<T>(array: T[], from: number, to: number): void {
+		const temp = array[from];
+		array[from] = array[to];
+		array[to] = temp;
+	}
+
+	public static modernSwapValues<T>(
+		array: T[],
+		from: number,
+		to: number
+	): void {
+		[array[from], array[to]] = [array[to], array[from]];
+	}
 }
