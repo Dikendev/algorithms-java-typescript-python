@@ -19,4 +19,9 @@ describe("Utils", () => {
 		Utils.modernSwapValues(array, from, to);
 		expect(array).toEqual([1, 3, 6, 5, 4]);
 	});
+
+	it("should find the lowest index in part of array", () => {
+		const array: number[] = [1, 3, 4, 5, 6, 7];
+		expect(Utils.minIndex(array, 1, 5)).toBe(1);
+	});
 });
