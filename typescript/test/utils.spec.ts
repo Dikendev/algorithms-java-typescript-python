@@ -10,4 +10,13 @@ describe("Utils", () => {
 
 		expect(array).toEqual([1, 5, 4, 3, 6, 7]);
 	});
+
+	it("should swap values in modern way", () => {
+		const array: number[] = [1, 3, 4, 5, 6];
+		const from = 2;
+		const to = 4;
+
+		Utils.modernSwapValues(array, from, to);
+		expect(array).toEqual([1, 3, 6, 5, 4]);
+	});
 });
