@@ -23,5 +23,8 @@ describe("Utils", () => {
 	it("should find the lowest index in part of array", () => {
 		const array: number[] = [1, 3, 4, 5, 6, 7];
 		expect(Utils.minIndex(array, 1, 5)).toBe(1);
+		expect(Utils.minIndex(array, 2, 5)).toBe(2);
+		expect(Utils.minIndex([1, 4], 0, 2, Utils.gt)).toEqual(0);
+		expect(Utils.minIndex([1, 4], 1, 2, Utils.gt)).toEqual(1);
 	});
 });
