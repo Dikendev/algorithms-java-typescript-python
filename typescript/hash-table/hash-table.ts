@@ -42,12 +42,20 @@ export class HashTable<K, V> implements IHashTable<K, V> {
 	}
 
 	clone(): IHashTable<K, V> {
-		throw new Error("Method not implemented.");
+		const copy: IHashTable<K, V> = new HashTable<K, V>(
+			this.capability,
+			this.hash
+		);
+		copy.putAll(this.elements());
+		return copy;
 	}
 
 	contains(value: V): boolean {
-		throw new Error("Method not implemented.");
+		return this.buckets.some((bucket) =>
+			bucket.some((entry) => this.equalValue(entry.value, value))
+		);
 	}
+
 	containsKey(key: K): boolean {
 		throw new Error("Method not implemented.");
 	}
