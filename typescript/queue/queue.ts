@@ -22,9 +22,6 @@ export class Queue<T> implements Queue<T> {
 
 	enqueue(element: T): void {
 		if (this.size() < this.MAX_QUEUE_SIZE) {
-			console.log("this.MAX_QUEUE_SIZE, ", this.MAX_QUEUE_SIZE);
-
-			console.log("sizê, ", this.size());
 			this.storage.push(element);
 		} else {
 			throw new Error("Queue overflow!");
