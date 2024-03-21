@@ -44,6 +44,7 @@ export class HashTable<K, V> implements IHashTable<K, V> {
 	clone(): IHashTable<K, V> {
 		throw new Error("Method not implemented.");
 	}
+
 	contains(value: V): boolean {
 		throw new Error("Method not implemented.");
 	}
