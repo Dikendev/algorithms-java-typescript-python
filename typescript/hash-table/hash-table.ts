@@ -36,8 +36,11 @@ export class HashTable<K, V> implements IHashTable<K, V> {
 	}
 
 	clear(): void {
-		throw new Error("Method not implemented.");
+		for (let i = 0; i < this.capability; i++) {
+			this.buckets.push([]);
+		}
 	}
+
 	clone(): IHashTable<K, V> {
 		throw new Error("Method not implemented.");
 	}
