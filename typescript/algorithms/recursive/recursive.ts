@@ -72,7 +72,7 @@ const parentObject: Structure[] = [
 	},
 ];
 
-function flattenStructure(structure: Structure[]): Structure[] {
+export function flattenStructure(structure: Structure[]): Structure[] {
 	let flatStructure: Structure[] = [];
 
 	for (let node of structure) {
@@ -82,9 +82,7 @@ function flattenStructure(structure: Structure[]): Structure[] {
 			child: [],
 		});
 
-		// check se existe filho.
 		if (node.child.length > 0) {
-			// chama a função recursivamente.
 			flatStructure = flatStructure.concat(flattenStructure(node.child));
 		}
 	}
