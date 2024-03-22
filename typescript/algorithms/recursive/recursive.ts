@@ -76,18 +76,21 @@ export function flattenStructure(structure: Structure[]): Structure[] {
 	let flatStructure: Structure[] = [];
 
 	for (let node of structure) {
-		flatStructure.push({
-			id: node.id,
-			description: node.description,
-			child: [],
-		});
+		pushData(flatStructure, node);
 
 		if (node.child.length > 0) {
 			flatStructure = flatStructure.concat(flattenStructure(node.child));
 		}
 	}
-
 	return flatStructure;
+}
+
+function pushData(flatStructure: Structure[], node: Structure) {
+	flatStructure.push({
+		id: node.id,
+		description: node.description,
+		child: [],
+	});
 }
 
 const result = flattenStructure(parentObject);
