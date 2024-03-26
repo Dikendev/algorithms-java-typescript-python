@@ -12,17 +12,14 @@ interface PhoneInfo {
 	number: string;
 }
 
-interface Dictionary {
-	[key: string]: PhoneInfo;
+interface Dictionary<T> {
+	[key: string]: T;
 }
 
-function listToDict(
-	list: PhoneInfo[],
-	idGen: (arg: PhoneInfo) => string
-): Dictionary {
-	const dictionary: Dictionary = {};
+function listToDict<T>(list: T[], idGen: (arg: T) => string): Dictionary<T> {
+	const dictionary: Dictionary<T> = {};
 
-	list.forEach((item: PhoneInfo) => {
+	list.forEach((item: T) => {
 		const dictionaryKey = idGen(item);
 		dictionary[dictionaryKey] = item;
 	});
