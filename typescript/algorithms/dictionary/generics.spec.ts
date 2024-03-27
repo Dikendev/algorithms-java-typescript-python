@@ -47,7 +47,6 @@ describe("listToDict function", () => {
 			contactList,
 			(item) => item.number
 		);
-
 		expect(orderContactListByNumber).toEqual(orderContactListByNumberResult);
 	});
 
