@@ -39,4 +39,3 @@ class QuickSort {
 let scores = [90, 60, 50, 80, 70, 100]
 const quickSort = new QuickSort()
 quickSort.sort(scores)
-console.log(scores)
