@@ -1,11 +1,5 @@
 const hashMap = new Map();
 
-hashMap.set('name', 'Diego');
-hashMap.set('age', '28');
-hashMap.set('city', 'Blumenau');
-
-hashMap.delete('city');
-
 const myMap = new Map();
 
 myMap.set('a', 1);
@@ -26,6 +20,3 @@ const user2 = { id: 2 };
 const user3 = { id: 3 };
 
 const userMap = new Map();
-
-userMap.set(user1, 'John Doe')
-userMap.set(user2, 'Jane Smith')
