@@ -59,4 +59,3 @@ function findUniqueElements(array) {
 }
 const numbers = [1, 2, 3, 4, 5, 6, 4, 3, 6, 7, 8, 4, 2, 1];
 const uniqueNumbers = findUniqueElements(numbers)
-console.log(uniqueNumbers)
