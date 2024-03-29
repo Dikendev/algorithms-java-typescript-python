@@ -29,6 +29,3 @@ const userMap = new Map();
 
 userMap.set(user1, 'John Doe')
 userMap.set(user2, 'Jane Smith')
-console.log(userMap.get(user2))
-
-console.log(userMap.get({ id: 2 }))
