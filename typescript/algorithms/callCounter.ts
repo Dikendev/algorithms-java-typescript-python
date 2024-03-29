@@ -4,8 +4,3 @@ function createCounter(n: number): () => number {
 }
 
 const counter = createCounter(-2);
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
