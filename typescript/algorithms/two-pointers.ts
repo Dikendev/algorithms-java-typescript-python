@@ -1,19 +1,17 @@
-const a = "asbcd";
-const b = "abd";
-
 // verify if b exist in a.
-function ifExist(a: string, b: string): string {
-	for (let charA of a) {
-		console.log(charA);
+export function ifExist(word: string, wordExist: string): number {
+	let result = "";
+	for (let i = 0; i < wordExist.length; i++) {
+		if (wordExist[i] === word[i]) {
+			console.log(wordExist[i], "exist");
 
-		for (let charB of b) {
-			console.log(charB);
+			result = result.concat(wordExist[i]);
 		}
 	}
 
-	return "2";
+	if (wordExist.length === 0) {
+		return 1;
+	}
+	console.log("result", result);
+	return -1;
 }
-
-const test2 = ifExist(a, b);
-
-console.log(test2);
