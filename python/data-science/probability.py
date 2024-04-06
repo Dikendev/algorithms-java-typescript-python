@@ -32,4 +32,25 @@ def eventProbability():
     name = event_condition.__name__
     print(f"Probability of event arising from '{name}' is {prob}")
 
-eventProbability()
+weighted_sample_space = {'Heads': 4, 'Tails': 1}
+sample_space_size = sum(weighted_sample_space.values())
+assert sample_space_size == 5
+
+event = get_matching_event(is_heads_or_tails, weighted_sample_space)
+
+event_size = sum(weighted_sample_space[outcome] for outcome in event)
+assert event_size == 5
+
+def compute_event_probability(event_condition, generic_sample_space):
+  event = get_matching_event(event_condition, generic_sample_space)
+  if type(generic_sample_space) == type(set()):
+    return len(event) / len(generic_sample_space)
+  
+  event_size = sum(generic_sample_space[outcome] for outcome in event)
+
+  return event_size / sum(generic_sample_space.values()) 
+
+for event_condition in event_conditions:
+  prob = compute_event_probability(event_condition, weighted_sample_space)
+  name = event_condition.__name__
+  print(f"Probability of event arising from '{name} is {prob}'")
