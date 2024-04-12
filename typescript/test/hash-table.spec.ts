@@ -9,6 +9,5 @@ describe("HashTable", () => {
 
 		hashTable.put("one", 1);
 		const elements = hashTable.elements();
-		console.log("element", elements);
 	});
 });
