@@ -8,11 +8,3 @@ s.push(4);
 s.push(5);
 s.push(30);
 s.push("A");
-
-console.log(s.size());
-console.log(s.peek());
-console.log(s.pop());
-console.log(s.size());
-console.log(s.peek());
-console.log(s.clear());
-console.log(s.peek());
