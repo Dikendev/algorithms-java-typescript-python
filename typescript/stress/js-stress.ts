@@ -11,15 +11,12 @@ function generateLimitJsObject(totalLines: number): TestSearch {
 			id: i,
 		};
 	}
-	console.log(objectResult);
 	return objectResult;
 }
 
 const totalLines = 2156282;
 
-const stressedObject = (stressedResult: TestSearch) => {
-	console.log("works");
-};
+const stressedObject = (stressedResult: TestSearch) => {};
 
 const resultData = generateLimitJsObject(totalLines);
 
