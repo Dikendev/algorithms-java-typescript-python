@@ -34,7 +34,6 @@ export default class MergeSort {
 const unsorted: number[] = [5, 3, 7, 6, 2, 9, 1, 8, 4];
 const merge = new MergeSort();
 const sorted = merge.sort(unsorted);
-console.log("sorted", sorted);
 
 const benchMarkFunction: BenchmarkFunctions<number[], number[]> = {
 	functionDescription: "Merge Sort",
