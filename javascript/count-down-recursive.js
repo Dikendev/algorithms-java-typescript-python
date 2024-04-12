@@ -1,5 +1,4 @@
 function countDown(number) {
-  console.log(number)
 
   const newNumber = number - 1;
 
