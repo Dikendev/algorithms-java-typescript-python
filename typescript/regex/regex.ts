@@ -1,4 +1,3 @@
-console.log("regex email validation");
 const email: string = "diken.dev@gmail.com";
 
 console.log(checkEmail(email));
