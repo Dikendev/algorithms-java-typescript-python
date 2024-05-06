@@ -2,7 +2,7 @@ import { insertionSort } from "./insertion-sort-invariants";
 
 describe("Insertion Sort", () => {
 	it("should sort an array with unique numbers", () => {
-		const numbers = [5, 4, 2, 7, 8, 1, 3, 6];
+		const numbers = [5, 7, 4, 2, 8, 1, 3, 6];
 
 		insertionSort(numbers, numbers.length);
 
