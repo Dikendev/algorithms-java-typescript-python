@@ -9,7 +9,7 @@ export function insertionSort(numbers: number[], n: number) {
 		while (j >= 0 && numbers[j] > key) {
 			numbers[j + 1] = numbers[j];
 			j--;
-			numbers[j + 1] = key;
 		}
+		numbers[j + 1] = key;
 	}
 }
