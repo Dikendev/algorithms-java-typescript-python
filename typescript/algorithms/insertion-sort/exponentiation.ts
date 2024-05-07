@@ -1,19 +1,19 @@
 export {};
 
-export function exponentiation(b: number, c: number): number {
-	let x = b;
-	let y = c;
-	let z = 1;
+export function exponentiation(base: number, exponent: number): number {
+	let x = base;
+	let y = exponent;
+	let result = 1;
 
 	while (y != 0) {
 		if (y % 2 === 0) {
 			x = x * x;
 			y = y / 2;
 		} else {
-			z = z * x;
+			result = result * x;
 			y--;
 		}
 	}
 
-	return z;
+	return result;
 }
