@@ -1,6 +1,6 @@
 export {};
 
-function exponentiation(b: number, c: number): number {
+export function exponentiation(b: number, c: number): number {
 	let x = b;
 	let y = c;
 	let z = 1;
@@ -17,5 +17,3 @@ function exponentiation(b: number, c: number): number {
 
 	return z;
 }
-
-console.log(exponentiation(2, 3));
