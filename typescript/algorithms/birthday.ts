@@ -1,4 +1,4 @@
-bexport {};
+export {};
 function birthday(s: number[], d: number, m: number): number {
 	let counter: number = 0;
 	let counts = 0;
@@ -29,5 +29,3 @@ function birthday(s: number[], d: number, m: number): number {
 const segment = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
 const day = 18;
 const month = 7;
-
-console.log(birthday(segment, day, month));
