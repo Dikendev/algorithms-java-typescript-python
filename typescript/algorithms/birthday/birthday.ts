@@ -1,16 +1,16 @@
 export {};
-function birthday(s: number[], d: number, m: number): number {
+function birthday(segment: number[], day: number, month: number): number {
 	let counter: number = 0;
 	let counts = 0;
-	for (let i = 0; i < s.length; i++) {
+	for (let i = 0; i < segment.length; i++) {
 		let numsToSum: number[] = [];
-		if (m > 1) {
-			for (let j = 1; j < s.length - 1; j++) {
-				numsToSum.push(s[j]);
-				if (j === m) {
-					const sum = numsToSum.reduce((a, b) => a + b, s[i]);
+		if (month > 1) {
+			for (let j = 1; j < segment.length - 1; j++) {
+				numsToSum.push(segment[j]);
+				if (j === month) {
+					const sum = numsToSum.reduce((a, b) => a + b, segment[i]);
 
-					if (sum === d) {
+					if (sum === day) {
 						counts++;
 					} else {
 						numsToSum = [];
@@ -18,7 +18,7 @@ function birthday(s: number[], d: number, m: number): number {
 				}
 			}
 		} else {
-			if (s[0] === d) {
+			if (segment[0] === day) {
 				counts++;
 			}
 		}
