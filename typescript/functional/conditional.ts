@@ -9,3 +9,12 @@ type Reverse<A> = A extends [infer First, ...infer Rest]
 	? [...Reverse<Rest>, First]
 	: A;
 type R = Reverse<[1, 2, 3, 4, 5]>;
+
+type IsPalindrome<A> = A extends [infer First, ...infer Rest, infer Last]
+	? First extends Last
+		? IsPalindrome<Rest>
+		: false
+	: true;
+
+type P = IsPalindrome<[1, 2, 3, 2, 1]>;
+type F = IsPalindrome<[1, 2, 3, 4, 5]>;
