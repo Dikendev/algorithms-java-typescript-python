@@ -1,12 +1,16 @@
+/**
+ * Check if the second word exist in the first one, if yes return 1 otherwise return -1
+ * Solution O(1)
+ * @returns
+ */
 export function ifExist(word: string, wordExist: string): number {
-	let wordCopy = word.split("");
-	const existInFirstWord = wordExist.split("").every((value: string, index) => {
-		if (wordCopy.includes(value)) {
-			wordCopy = wordCopy.slice(index, wordCopy.length);
-			return true;
+	let i = 0;
+	let j = 0;
+	while (i < word.length && j < wordExist.length) {
+		if (word[i].includes(wordExist[j])) {
+			j++;
 		}
-		return false;
-	});
-
-	return existInFirstWord ? 1 : -1;
+		i++;
+	}
+	return j === wordExist.length ? 1 : -1;
 }
