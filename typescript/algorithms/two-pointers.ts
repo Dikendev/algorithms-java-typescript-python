@@ -1,14 +1,12 @@
-// verify if b exist in a.
 export function ifExist(word: string, wordExist: string): number {
-	let result = "";
-	for (let i = 0; i < wordExist.length; i++) {
-		if (wordExist[i] === word[i]) {
-			result = result.concat(wordExist[i]);
+	let wordCopy = word.split("");
+	const existInFirstWord = wordExist.split("").every((value: string, index) => {
+		if (wordCopy.includes(value)) {
+			wordCopy = wordCopy.slice(index, wordCopy.length);
+			return true;
 		}
-	}
+		return false;
+	});
 
-	if (wordExist.length === 0) {
-		return 1;
-	}
-	return -1;
+	return existInFirstWord ? 1 : -1;
 }
