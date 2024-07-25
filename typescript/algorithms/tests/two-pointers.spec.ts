@@ -3,7 +3,7 @@ import { ifExist } from "../two-pointers";
 describe("Two Pointers function", () => {
 	it("should return a 1 when search word exist in first word", () => {
 		const wordOne = "asbcd";
-		const wordExist = "abd";
+		const wordExist = "abc";
 		const exist = ifExist(wordOne, wordExist);
 		expect(exist).toBe(1);
 	});
