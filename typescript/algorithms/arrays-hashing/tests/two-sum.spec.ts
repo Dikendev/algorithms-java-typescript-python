@@ -24,4 +24,36 @@ describe("twoSum", () => {
 		const sum = twoSum(numbers, target);
 		expect(sum).toEqual(output);
 	});
+
+	it("should return the indices of the fourth case", () => {
+		const numbers = [1, 2, 3, 4, 5, 10];
+		const target = 9;
+		const output = [3, 4];
+		const sum = twoSum(numbers, target);
+		expect(sum).toEqual(output);
+	});
+
+	it("should return a empty array if no sum number is equal to target value", () => {
+		const numbers = [1, 2, 3, 4, 5];
+		const target = 50;
+		const output: number[] = [];
+		const sum = twoSum(numbers, target);
+		expect(sum).toEqual(output);
+	});
+
+	it("should return the sum result using float numbers", () => {
+		const numbers = [1.5, 2.5, 5.3];
+		const target = 7.8;
+		const output = [1, 2];
+		const sum = twoSum(numbers, target);
+		expect(sum).toEqual(output);
+	});
+
+	it("should return the sum using negative numbers ", () => {
+		const numbers = [3, -10, -6, 2];
+		const target = 16;
+		const output = [1, 2];
+		const sum = twoSum(numbers, target);
+		expect(sum).toEqual(output);
+	});
 });
