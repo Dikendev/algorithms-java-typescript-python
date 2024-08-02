@@ -7,3 +7,7 @@ export function sumArray(array: number[]) {
 
 	return sum;
 }
+
+export function sumArrayRecursive(array: number[]): number {
+	return array.reduce((current, accumulated) => (current += accumulated));
+}
