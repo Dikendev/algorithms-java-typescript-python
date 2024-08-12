@@ -17,9 +17,11 @@ public class LinkedLists {
 
       findValue(list, 1);
 
-      changeValueList(list, 1, "java");
-      changeValueList(list, 0, "developer");
-      changeValueList(list, 5, "no found item");
+      changeValue(list, 0, "developer");
+      changeValue(list, 1, "java");
+      changeValue(list, 5, "no found item");
+
+      capitalizeItens(list);
     } catch (Exception error) {
       System.out.println("Error: " + error.getMessage());
     } finally {
@@ -47,44 +49,52 @@ public class LinkedLists {
   }
 
   public static void removingValue(LinkedList<String> list, String item) {
-    try {
-      boolean itemRemoved = list.remove(item);
+    isListNull(list);
 
-      if (!itemRemoved) {
-        System.out.println("No itens removed");
-        return;
-      }
+    boolean itemRemoved = list.remove(item);
 
-      System.out.println(item + " Item removed from list");
-    } catch (IndexOutOfBoundsException error) {
-      System.out.println("Something goes wrong");
-    } finally {
-      print("LinkedList after: ", list);
+    if (!itemRemoved) {
+      System.out.println("No itens removed");
+      return;
     }
+
+    System.out.println(item + " Item removed from list");
+    print("LinkedList after: ", list);
   }
 
   public static void findValue(LinkedList<String> list, int index) {
+    isListNull(list);
+
     try {
       String foundName = list.get(index);
       System.out.println("Item: " + foundName + " found at index: " + index);
     } catch (IndexOutOfBoundsException error) {
-      System.out.println("Item not found");
+      System.out.println("Item not found at index: " + index);
     }
   }
 
-  public static void changeValueList(LinkedList<String> list, int indexToChange, String newValue) {
-    if(list == null) {
-      System.out.println("List cannot be null");
-      return;
-    }
+  public static void changeValue(LinkedList<String> list, int indexToChange, String newValue) {
+    isListNull(list);
 
     try {
-      String data = list.set(indexToChange,newValue);
-      System.out.println("Value: " + data + " change to: " + newValue);
+      String oldValue = list.set(indexToChange,newValue);
+      System.out.println("Value: " + oldValue + " change to: " + newValue);
     } catch (IndexOutOfBoundsException error) {
-      System.out.println("No file modified");
+      System.out.println("No item found at index " + indexToChange);
     } finally {
-      print("LinkedList after: ", list);
+      print("LinkedList after change: ", list);
+    }
+  }
+
+  private static void capitalizeItens(LinkedList<String> list) {
+    isListNull(list);
+    list.replaceAll(String::toUpperCase);
+    System.out.println("Updated list: " + list);
+  }
+
+  private static void isListNull(LinkedList<String> list) {
+    if(list == null) {
+      throw new IllegalArgumentException("List cannot be null");
     }
   }
 
