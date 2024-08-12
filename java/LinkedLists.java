@@ -8,35 +8,39 @@ public class LinkedLists {
 
     List<String> names = List.of("Diego", "Cristina", "Tutu");
 
-    addValues(list, names);
+    try {
+      addValues(list, names);
 
-    int index = 1;
+      print("LinkedList before: ", list);
 
-    print("LinkedList before: ", list);
+      removingValue(list, "Tutu");
 
-    removingValue(list, "Tutu");
+      findValue(list, 1);
 
-    accessValue(list, index);
-
-    changeValueList(list, 1, "java");
-    changeValueList(list, 0, "developer");
-    changeValueList(list, 5, "no found item");
-
+      changeValueList(list, 1, "java");
+      changeValueList(list, 0, "developer");
+      changeValueList(list, 5, "no found item");
+    } catch (Exception error) {
+      System.out.println("Error: " + error.getMessage());
+    } finally {
+      System.out.println("Exiting");
+    }
   }
 
   public static void addValues(LinkedList<String> list, List<String> itens) {
     if (list == null || itens == null) {
-      System.out.println("List or items cannot be null");
-      return;
+      throw new IllegalArgumentException("List or items cannot be null");
     }
 
     try {
       boolean addingValues = list.addAll(itens);
+
       if (!addingValues) {
         System.out.println("Not values where added to the list");
         return;
       }
-      System.out.println("Values added successfully");
+
+      System.out.println("Values: "+ itens + " added successfully");
     } catch (Exception error) {
       System.out.println("An error occurred while adding values: " + error.getMessage());
     }
@@ -45,11 +49,13 @@ public class LinkedLists {
   public static void removingValue(LinkedList<String> list, String item) {
     try {
       boolean itemRemoved = list.remove(item);
+
       if (!itemRemoved) {
         System.out.println("No itens removed");
-      } else {
-        System.out.println(item + " Item removed from list");
+        return;
       }
+
+      System.out.println(item + " Item removed from list");
     } catch (IndexOutOfBoundsException error) {
       System.out.println("Something goes wrong");
     } finally {
@@ -57,7 +63,7 @@ public class LinkedLists {
     }
   }
 
-  public static void accessValue(LinkedList<String> list, int index) {
+  public static void findValue(LinkedList<String> list, int index) {
     try {
       String foundName = list.get(index);
       System.out.println("Item: " + foundName + " found at index: " + index);
@@ -67,6 +73,11 @@ public class LinkedLists {
   }
 
   public static void changeValueList(LinkedList<String> list, int indexToChange, String newValue) {
+    if(list == null) {
+      System.out.println("List cannot be null");
+      return;
+    }
+
     try {
       String data = list.set(indexToChange,newValue);
       System.out.println("Value: " + data + " change to: " + newValue);
